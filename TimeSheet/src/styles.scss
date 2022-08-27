@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+p {
+  font-size: 125%;
+}
+
+button {
+  font-size: 140%;
+}
+
+$color1: rgb(0, 128, 255);
+$color2: rgb(255, 128, 0);
+$color3: rgb(128, 255, 0);
+
+$colors: $color1, $color2, $color3;
+$lighten: 20%, 30%, 40%;
+$namesMod: "dark", "medium", "light";
+$rotation: 0deg, 45deg, 135deg, 90deg, 225deg;
+
+@for $i from 1 through length($namesMod) {
+  @for $j from 1 through length($colors) {
+    .solid-background-#{nth($namesMod, $i)}-color#{$j} {
+      background-color: lighten(nth($colors, $j), nth($lighten, $i));
+    }
+  }
+}
+
+$gradLighten: 40%;
+
+.back-grad {
+  background: linear-gradient(
+    -45deg,
+    lighten($color1, $gradLighten),
+    lighten($color2, $gradLighten),
+    lighten($color3, $gradLighten)
+  );
+  background-size: 400% 100%;
+  animation: gradient 10s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

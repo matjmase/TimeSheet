@@ -1,0 +1,40 @@
+<ng-template #modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+      Clocking {{ model.ClockingIn ? "In" : "Out" }}
+    </h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="Close()"
+    ></button>
+  </div>
+
+  <div class="m-3">
+    <ngb-datepicker [(ngModel)]="picker.date"></ngb-datepicker>
+
+    <ngb-timepicker
+      [(ngModel)]="picker.time"
+      [meridian]="true"
+    ></ngb-timepicker>
+  </div>
+  <div class="m-3">
+    <label for="reasonInput" class="form-label">Reason</label>
+    <input
+      type="text"
+      class="form-control"
+      id="reasonInput"
+      placeholder="Getting to work || Going to smoke"
+      [(ngModel)]="model.Purpose"
+    />
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="Accept()">
+      Save
+    </button>
+    <button type="button" class="btn btn-danger" (click)="Close()">
+      Cancel
+    </button>
+  </div>
+</ng-template>

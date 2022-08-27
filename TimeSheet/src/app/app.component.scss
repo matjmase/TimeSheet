@@ -1,0 +1,36 @@
+.std-nav {
+  position: inherit;
+  pointer-events: initial;
+}
+
+.hide-nav {
+  width: 100%;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.show-nav {
+  z-index: 10;
+  width: 100%;
+  position: fixed;
+  pointer-events: initial;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.full-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.small-nav {
+  flex-shrink: 1;
+}
+
+.large-content {
+  flex-grow: 1;
+  text-align: center;
+}

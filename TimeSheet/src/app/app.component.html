@@ -1,0 +1,23 @@
+<div class="full-body">
+  <div
+    class="small-nav"
+    [ngClass]="{
+      'std-nav': !OnHomePage(),
+      'hide-nav': OnHomePage() && !scrolledDown,
+      'show-nav': OnHomePage() && scrolledDown
+    }"
+  >
+    <app-nav-bar></app-nav-bar>
+  </div>
+  <div class="large-content back-grad">
+    <div
+      [ngClass]="{
+        container: !OnHomePage(),
+        'mb-3': !OnHomePage(),
+        'mt-3': !OnHomePage()
+      }"
+    >
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
