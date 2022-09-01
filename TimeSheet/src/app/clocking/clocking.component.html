@@ -1,10 +1,6 @@
 <h2>Clock in Times!</h2>
 <hr />
-<p>
-  You have been clocked in for: {{ totalClocked.getHours() }}:{{
-    totalClocked.getMinutes()
-  }}:{{ totalClocked.getSeconds() }}
-</p>
+<p>You have been clocked in for: {{ totalClocked | timeformat }}</p>
 <app-add-or-edit-event
   [Communicate]="modalCommunication"
 ></app-add-or-edit-event>
